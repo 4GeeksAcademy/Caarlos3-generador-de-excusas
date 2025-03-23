@@ -1,44 +1,39 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caarlos Generador de excusas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body onload="generadorExcusas()" >
+  <div class="p-5 mb-4 rounded-3">
+    <div class="container-fluid py-5 rounded" id="jumbotron">
+      <h1 class="display-5 fw-bold rounded fs-3 text-center text-danger" id="excusa">My dog ate my homeworks </h1>
+    </div>
+  </div>
+  
+  <script>
+      function generadorExcusas(){
+          let quien = ['My dog', 'My grandma', 'The mail man', 'My bird' ];
+          let como = [ 'ate', 'peed', 'crushed', 'broken'];
+          let que = ['my homeworks', 'my phone', 'the car'];
+          let cuando = ['before the class', 'when I was spleeping', 'while I was exercising', 'during my lunch', 'while I was playing'];
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <p id="randomExcuse"></p>
-    
-    <script>
-        function randomExcuse(){
-            let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
-            let action = ['ate', 'peed', 'crushed', 'broke'];
-            let what = ['my homework', 'my phone', 'the car'];
-            let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
+          let quienidx = Math.floor(Math.random() * quien.length);
+          let comoidx = Math.floor(Math.random() * como.length);
+          let queidx = Math.floor(Math.random() * que.length);
+          let cuandoidx = Math.floor(Math.random() * cuando.length);
 
-            let randomWho = Math.floor(Math.random() * who.length);
-            let randomActrion = Math.floor(Math.random() * action.length);
-            let randomWhat = Math.floor(Math.random() * what.length);
-            let randomWhen = Math.floor(Math.random() * when.length);
+          let excusa = quien[quienidx] + " " + como[comoidx] + " " + que[queidx] + " " + cuando[cuandoidx];
 
-            let excuse = `${who[randomWho]} ${action[randomAction]} ${what[randomWhat]} ${when[randomWhen]}.`;
-            
-            document.getElementById("randomExcuse").innerText = excuse;
-        }
-        window.onload = randomExcuse;
+          document.getElementById("excusa").innerHTML = excusa;
 
-    </script>
-
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
-  </body>
+          }
+          
+      
+  </script>
+  
+</body>
 </html>
