@@ -1,10 +1,15 @@
-#jumbotron{
+#principal-div{
+    background-color: white;
+}
+
+#jumbotron-div{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXS1EMUWOAHUiQZzUfUWkQwPDqurKZYiAlGg&s);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 80vh;
 }
+
 h1{
     background-color: white;
 }

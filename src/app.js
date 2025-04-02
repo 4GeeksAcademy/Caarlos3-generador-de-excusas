@@ -11,6 +11,6 @@ function generadorExcusas(){
 
     let excusa = quien[quienidx] + " " + como[comoidx] + " " + que[queidx] + " " + cuando[cuandoidx];
 
-    document.getElementById("excusa").innerHTML = excusa;
+    document.getElementById("excusa-random").innerHTML = excusa;
 
     }
